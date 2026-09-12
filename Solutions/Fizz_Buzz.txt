@@ -1,0 +1,15 @@
+
+def decpow(num,r):
+    if num <= 0:
+        return False
+    while num % r == 0:
+        num //= r
+    return num
+
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        outp=[]
+        for i in range(1,n+1):
+            if decpow(i,3)!=i and decpow(i,5)!=i:
+                outp.append("FizzBuzz")
+            elif decpow(i,3)!=i:
