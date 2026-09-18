@@ -1,0 +1,11 @@
+
+import string
+
+class Solution:
+    def mapWordWeights(self, words: List[str], weights: List[int]) -> str:
+        alpha=list(string.ascii_lowercase)[::-1]
+        l=""
+        i=0
+        for word in words:
+            l += alpha[sum(weights[ord(c)-97] for c in word)%26]
+        return l
