@@ -1,13 +1,7 @@
 
-import string
-
 class Solution:
     def reverseDegree(self, s: str) -> int:
         out=0
-        alpha=list(string.ascii_lowercase)
-        ind=list(range(26,0,-1))
-        for i,ch in enumerate(s):
-            for c in range(len(alpha)):
-                if ch==alpha[c]:
-                    out+=ind[c]*(i+1)
+        for i,ch in enumerate(s.upper()):
+            out+=+(91-ord(ch))*(i+1)
         return out
