@@ -1,0 +1,13 @@
+
+def sumd(n):
+    s=0
+    for i in str(n):
+        s+=int(i)
+    return s
+
+class Solution:
+    def smallestIndex(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            if sumd(nums[i])==i:
+                return i
+        return -1
