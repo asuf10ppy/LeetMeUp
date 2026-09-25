@@ -1,0 +1,8 @@
+
+class Solution:
+    def minimumIndex(self, capacity: list[int], itemSize: int) -> int:
+        sc=sorted(capacity)
+        for i in range(len(sc)):
+            if itemSize<=sc[i]:
+                return capacity.index(sc[i])
+        return -1
