@@ -1,0 +1,12 @@
+
+class Solution:
+    def findRelativeRanks(self, score: list[int]) -> list[str]:
+        out={val:str(i+1) for i,val in enumerate(sorted(set(score))[::-1])}
+        for x in out:
+            if out[x]=="1":
+                out[x]="Gold Medal"
+            elif out[x]=="2":
+                out[x]="Silver Medal"
+            elif out[x]=="3":
+                out[x]="Bronze Medal"
+        return [out[x] for x in score]
